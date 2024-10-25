@@ -1,0 +1,45 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: snow;
+  transition: 2s ease-in-out background-color;
+}
+
+button {
+  font-size: 2rem;
+  padding-block: 0.8rem;
+  padding-inline: 1.5rem;
+  border: 6px solid;
+  border-radius: 5px;
+  background-color: snow;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  letter-spacing: 0.2rem;
+}
+
+.darkMod {
+  color: white;
+  background-color: rgb(63, 63, 63);
+  box-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 20px yellow;
+}
+.darkModDiv {
+  background-color: rgb(63, 63, 63);
+  transition: 1s ease-in-out background-color;
+}
