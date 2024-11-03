@@ -36,3 +36,23 @@ Callbackfunktion, genannt "event":  - das Event wird von dem Eventlistener in di
                                       um herauszufinden, welche Checkbox gecheckt wurde
                                       -> kann mit console.log(event.target) ausgelesen werden
 */
+
+/*
+lastChecked - Erklärung:
+- am Anfang ist die Variable "lastChecked" = null
+- klicke ich nun z.B. auf "Fast", ist "lastChecked" immernoch null
+- dann wird der Code durchlaufen
+- und am Ende wird dann "aktuelleCheckbox" (im Beispiel = "Fast") in "lastChecked" gespeichert
+
+- nun checke ich z.B. "Cheap"
+- "lastChecked" ist dann immernoch "Fast"
+- dann durchläuft der Code
+- und am Ende wird "aktuelleCheckbox" (im Bsp. "Cheap") wieder in "lastChecked" gespeichert
+
+- checke ich zu guter letzt "Good"
+- "lastChecked" ist dann "Cheap"
+- der Code durchläuft
+- die if-Bedingnungen sagen nun, dass 3 Checkboxen gecheckt sind
+- nun wird die letzte angeklickte Checkbox ("lastChecked") ungecheckt und der Zähler um 1 zurück gesetzt
+- "lastChecked ist dann jetzt "Good"
+*/
