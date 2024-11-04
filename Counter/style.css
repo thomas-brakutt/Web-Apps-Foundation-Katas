@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  font-family: monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: antiquewhite;
+  height: 12rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+h1 {
+  font-size: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  margin-left: 3rem;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-left: 3rem;
+}
+
+button {
+  font-size: 2.5rem;
+  border: 3px solid;
+  border-radius: 5px;
+  padding-block: 0.7rem;
+  padding-inline: 0.9rem;
+  margin-right: 3rem;
+  margin-top: 3.8rem;
+  background-color: white;
+  box-shadow: 5px 5px white;
+}
+
+main {
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(90deg, #f8ad8adf 0%, white 0%);
+}
+
+main > p {
+  font-size: 10rem;
+}
