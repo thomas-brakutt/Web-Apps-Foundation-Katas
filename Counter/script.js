@@ -2,32 +2,33 @@ const mainEl = document.querySelector("main");
 const counter = document.querySelector("#counter");
 const resetbutton = document.querySelector("button");
 
-let zähler = 0; // Variable für Zähler zum hochzählen
-let farbZähler = 0; //Variable für den Zähler der Farbveränderung
+let zähler = 0; // Variable den Zähler zum hochzählen
+let farbZähler = 0; //Variable für den Zähler des Farbverlaufswertes
 
-// Funktion zum hochzählen
+// Funktion für Zähler zum hochzählen
 function counterEl() {
   zähler++; // zähler-Variable wir immer um 1 erhöht
-  counter.innerText = zähler;
-  //mainEl.style.backgroundColor = "#f8ad8adf";
+  counter.innerText = zähler; // "innerText wird bei dem <P> -Element mit Wert von "zähler" ersetzt
 }
 
 // Funktion, die den Bereich beim klicken färbt
 function färbung() {
-  farbZähler++;
+  farbZähler++; // erhöht den Wert immer um eins
   mainEl.style.backgroundImage =
     "linear-gradient(90deg, #f8ad8adf " + farbZähler + "%, white 0%)";
-  //allternative Schreibweise mit "Template-Strings"
-  // mainEl.style.backgroundImage = `linear-gradient(90deg, #f8ad8adf ${färbung}%, white 0%)`;
+  /* allternative Schreibweise mit "Template-Strings"
+     mainEl.style.backgroundImage = `linear-gradient(90deg, #f8ad8adf ${färbung}%, white 0%)`;
+  */
 
+  // wenn der Wert 100 erreicht hat, wird er auf 0 resettet
   if (farbZähler === 100) {
     farbZähler = 0;
   }
-  console.log(farbZähler);
 }
 
-//Event Listener für Klicks auf die Fläche um den Zähler hochzuzählen
+//Event Listener für Klicks auf die "main-Fläche um den Zähler hochzuzählen
 mainEl.addEventListener("click", function () {
+  // dadurch werden die beiden Funktionen ausgeführt
   counterEl();
   färbung();
 });
@@ -48,21 +49,3 @@ resetbutton.addEventListener("click", () => {
     "linear-gradient(90deg, #f8ad8adf 0%, white 0%)"; // Farbverlauf wird zurückgesetzt
   farbZähler = 0;
 });
-
-/*
-
-
-        // Den neuen Farbverlauf auf das Element anwenden
-        // clickableElement.style.backgroundImage = `linear-gradient(90deg, #f8ad8adf ${färbung}%, white 0%)`;
-
-        // Optional: Den aktuellen Zählerwert und den neuen Verlauf ausgeben
-        console.log(`Aktueller Zähler: ${counter}, Neuer Verlauf: ${newPercentage}%`);
-    });
-
-
-    // // Den neuen Farbverlauf auf das Element anwenden (ohne Template Literals)
-        clickableElement.style.backgroundImage = 'linear-gradient(90deg, #f8ad8adf ' + newPercentage + '%, white ' + newPercentage + '%)';
-
-        // Optional: Den aktuellen Zählerwert und den neuen Verlauf ausgeben
-        // console.log('Aktueller Zähler: ' + counter + ', Neuer Verlauf: ' + newPercentage + '%');
-*/
