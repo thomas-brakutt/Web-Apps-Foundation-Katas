@@ -1,0 +1,45 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  font-family: monospace;
+}
+
+header {
+  height: 8rem;
+  background-color: rgb(244, 222, 225);
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#red {
+  accent-color: red;
+  margin-right: 1.5rem;
+}
+
+#green {
+  accent-color: green;
+  margin-right: 1rem;
+}
+
+#blue {
+  accent-color: blue;
+}
+
+p {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-right: 1rem;
+}
+
+main {
+  height: calc(100vh - 8rem);
+  background-color: hotpink;
+}
