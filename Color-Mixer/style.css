@@ -33,14 +33,15 @@ header {
   accent-color: blue;
 }
 
-div {
-  margin-right: 1rem;
+label {
+  font-size: 2rem;
+  font-weight: 550;
 }
 
 p {
-  display: inline;
   font-size: 2rem;
   font-weight: 550;
+  margin-right: 1rem;
 }
 
 main {

@@ -1,19 +1,31 @@
 const red = document.querySelector("#red");
 const green = document.querySelector("#green");
 const blue = document.querySelector("#blue");
+const slider = document.querySelectorAll("input");
 
-const redText = document.querySelector(".red");
-const greenText = document.querySelector(".green");
-const blueText = document.querySelector(".blue");
+const colorCode = document.querySelector("p");
 
-red.addEventListener("input", function () {
-  redText.innerText = red.value;
+const main = document.querySelector("main");
+
+function mainColor() {
+  let redSlider = red.value;
+  let greenSlider = green.value;
+  let blueSlider = blue.value;
+
+  let newMainColor =
+    "rgb(" + redSlider + "," + greenSlider + "," + blueSlider + ")";
+
+  colorCode.innerText = newMainColor;
+  main.style.backgroundColor = newMainColor;
+}
+mainColor();
+
+red.addEventListener("input", () => {
+  mainColor();
 });
-
-green.addEventListener("input", function () {
-  greenText.innerText = green.value;
+green.addEventListener("input", () => {
+  mainColor();
 });
-
-blue.addEventListener("input", function () {
-  blueText.innerText = blue.value;
+blue.addEventListener("input", () => {
+  mainColor();
 });
