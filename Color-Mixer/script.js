@@ -1,25 +1,26 @@
-const red = document.querySelector("#red");
-const green = document.querySelector("#green");
-const blue = document.querySelector("#blue");
-const slider = document.querySelectorAll("input");
+const red = document.querySelector("#red"); // Zugriff auf den roten Slider
+const green = document.querySelector("#green"); // Zugriff auf den grünen Slider
+const blue = document.querySelector("#blue"); // Zugriff auf den blauen Slider
 
-const colorCode = document.querySelector("p");
+const colorCode = document.querySelector("p"); // Zugriff auf das "p-Element" (Anzeige oben rechts)
 
-const main = document.querySelector("main");
+const main = document.querySelector("main"); // Zugriff auf das "main-Element"
 
 function mainColor() {
-  let redSlider = red.value;
-  let greenSlider = green.value;
-  let blueSlider = blue.value;
+  // Funktion für Zuweisung der Slider zur Farbänderung
+  let redSlider = red.value; // Variable für roten Slider
+  let greenSlider = green.value; // Variable für grünen Slider
+  let blueSlider = blue.value; // Variable für blauen Slider
 
   let newMainColor =
-    "rgb(" + redSlider + "," + greenSlider + "," + blueSlider + ")";
+    "rgb(" + redSlider + "," + greenSlider + "," + blueSlider + ")"; // Variable zum speichern der durch die Slider veränderten Werte für aktuellen Farbcode
 
-  colorCode.innerText = newMainColor;
-  main.style.backgroundColor = newMainColor;
+  colorCode.innerText = newMainColor; // Text im "p-Element" wird mit den aktuellen Werten aus "newMainColor" überschrieben
+  main.style.backgroundColor = newMainColor; // backgroundColor-Wert im "main-Element" wird mit "newMainColor" überschrieben / aktualisiert
 }
-mainColor();
+mainColor(); // Funktion wird ausgeführt
 
+// EventListener auf die 3 Slider mit der Ausführung der "mainColor-Funktion" zum aktualisieren der veränderten Werte
 red.addEventListener("input", () => {
   mainColor();
 });
