@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin: 1.5rem;
+}
+
+form {
+  margin-left: 1.5rem;
+}
+
+label,
+input {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  margin-top: 1.5rem;
+}
