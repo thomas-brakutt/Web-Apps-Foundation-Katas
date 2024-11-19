@@ -26,3 +26,7 @@ input {
 button {
   margin-top: 1.5rem;
 }
+
+li input[type="checkbox"] {
+  margin-left: 10px; /* Abstand zwischen Text und Checkbox */
+}

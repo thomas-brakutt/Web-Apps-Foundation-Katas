@@ -2,11 +2,9 @@ const red = document.querySelector("#red"); // Zugriff auf den roten Slider
 const green = document.querySelector("#green"); // Zugriff auf den grünen Slider
 const blue = document.querySelector("#blue"); // Zugriff auf den blauen Slider
 
-const colorCode = document.querySelector("p"); // Zugriff auf das "p-Element" (Anzeige oben rechts)
-
-const main = document.querySelector("main"); // Zugriff auf das "main-Element"
-
 function mainColor() {
+  const colorCode = document.querySelector("p"); // Zugriff auf das "p-Element" (Anzeige oben rechts)
+  const main = document.querySelector("main"); // Zugriff auf das "main-Element"
   // Funktion für Zuweisung der Slider zur Farbänderung
   let redSlider = red.value; // Variable für roten Slider
   let greenSlider = green.value; // Variable für grünen Slider
