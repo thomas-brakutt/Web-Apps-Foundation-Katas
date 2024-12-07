@@ -2,6 +2,8 @@ const addBtn = document.querySelector("#addBtn"); // Zugriff auf Add-Button mit 
 const ul = document.querySelector("#ul"); // Zugriff auf das ul-Element mit Id
 const inputTodo = document.querySelector("#inputField"); // Zugriff auf das Input-Feld mit Id
 const error = document.querySelector("#error"); // Zugriff auf das span-Element mit Id
+const filters = document.querySelectorAll(".filter");
+let currentFilter = "all"; // Standardfilter: Alle Todos anzeigen
 
 // Variable zum speichern der Todo´s die eingegeben werden
 const todoList = {
@@ -58,8 +60,18 @@ function todoExists(todo) {
 // Funktion zum ausführen der "Veränderung" auf der Html-Seite
 function render() {
   ul.innerHTML = ""; // leert die aktuelle List
-  todoList.todos.forEach((todoElement) => {
-    const li = document.createElement("li"); // erstellt ein "li-Element" für jedes eingetragene ToDo
+
+  // todoList.todos.forEach((todoElement) => {
+  //   const li = document.createElement("li"); // erstellt ein "li-Element" für jedes eingetragene ToDo
+
+  const TodoFilter = todoList.todos.filter((todo) => {
+    if (currentFilter === "open") return !todo.done;
+    if (currentFilter === "done") return todo.done;
+    return true; // "all" Filter: Alle Todos anzeigen
+  });
+
+  TodoFilter.forEach((todoElement) => {
+    const li = document.createElement("li");
 
     const todoText = document.createTextNode(todoElement.description); // Variable die den Text jedes ToDo´s speichert ( als TextNode)
     li.append(todoText); // fügt die TextNode dem Li-Element hinzu
@@ -76,8 +88,14 @@ function render() {
 
     li.appendChild(checkbox);
     ul.appendChild(li);
-    //todoList = JSON.parse(localStorage.getItem(todoList)) || [];
   });
+
+  // Standardmäßig "all"-Filter aktivieren, falls keiner ausgewählt ist
+  const activeFilter = Array.from(filters).some((filter) => filter.checked);
+  if (!activeFilter) {
+    document.querySelector("#all").checked = true;
+    currentFilter = "all";
+  }
 }
 
 // EventListener für Remove-Button, um erledigte Todos zu entfernen -> führt dann die "remveDone-Funktion" aus
@@ -97,5 +115,12 @@ function removeDone(event) {
 function saveInLocalStorage() {
   localStorage.setItem("todoList", JSON.stringify(todoList.todos));
 }
+
+filters.forEach((filter) => {
+  filter.addEventListener("change", (event) => {
+    currentFilter = event.target.id;
+    render();
+  });
+});
 
 render();
